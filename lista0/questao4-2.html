@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Questao 4-2</title>
+        <style>
+            body { margin: 0; }
+        </style>
+    </head>
+    <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
+        <script> 
+            const scene = new THREE.Scene();
+            const cam = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+
+            const renderer = new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+            renderer.setClearColor(0xF1640F);
+
+            const geometry = new THREE.BoxGeometry(200, 200, 200);
+            const material = new THREE.MeshBasicMaterial( {color: 0xFFFFFF} );
+            const cube = new THREE.Mesh( geometry, material );
+            scene.add( cube );
+
+            cam.position.z = 800;
+
+            function animate(){
+                requestAnimationFrame(animate);
+                cube.rotation.z += 0.01;
+                cube.rotation.x += 0.01;
+                cube.rotation.y += 0.01;
+
+                renderer.render(scene, cam);
+            };
+
+            animate();
+        </script>
+    </body>
+</html>     

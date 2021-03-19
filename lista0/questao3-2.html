@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+//Calcular a quantidade de numeros pares de um array
+//Gerados aleatoriamente 
+
+const meu_Array = Array.from({length:10}, () => Math.floor(Math.random() * 100)); // Gerando array com numeros aleatórios de 0 a 100
+let quantidade = 0;
+console.log(meu_Array);
+
+    for(i = 0; i <= meu_Array.length; i++){
+        
+        if (meu_Array[i] % 2 === 0)
+        
+        quantidade++;
+
+
+    }
+console.log('Quantidade de numeros Pares', quantidade);
+
+</script>
+
+</body>
+</html>
